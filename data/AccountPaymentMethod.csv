@@ -1,0 +1,2 @@
+ID,name,code,payment_type
+account_payment_method_check,Check,check_printing,outbound

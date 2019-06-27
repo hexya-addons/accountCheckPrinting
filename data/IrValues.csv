@@ -1,0 +1,2 @@
+ID,model_id,name,key2,value,key,model
+account_print_checks,account.model_account_payment,Print Checks,client_action_multi,,action,account.payment

@@ -1,0 +1,5 @@
+ID,name,model_id,code
+action_account_print_checks,Print Checks,account.model_account_payment,
+if records:
+    action = records.print_checks()
+            

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+	<view id="account_journal_dashboard_kanban_view_inherited" model="AccountJournal" >
+                <xpath expr="//t[@t-name='JournalBodyBankCash']//div[contains(@class, 'o_kanban_primary_right')]" position="inside">
+                    <div t-if="journal_type == 'bank' and dashboard.num_checks_to_print != 0">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a type="object" name="action_checks_to_print">
+                                    <t t-esc="dashboard.num_checks_to_print"/>
+                                    <t t-if="dashboard.num_checks_to_print == 1">Check to print</t>
+                                    <t t-if="dashboard.num_checks_to_print != 1">Checks to print</t>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </view>
+	<view id="view_account_journal_form_inherited" model="AccountJournal" >
+                <xpath expr="//page[@name='advanced_settings']/group" position="inside">
+                    <group string="Check Printing" attrs="{'invisible': [('check_printing_payment_method_selected', '=', False)]}">
+                        <field name="check_printing_payment_method_selected" invisible="1"/>
+                        <field name="check_sequence_id" invisible="1"/>
+                        <field name="check_manual_sequencing"/>
+                        <field name="check_next_number" attrs="{'invisible': [('check_manual_sequencing', '=', False)]}"/>
+                    </group>
+                </xpath>
+            </view>
+    </data>
+</hexya>
